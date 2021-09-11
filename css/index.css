@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: 'DotGothic16', sans-serif;;
+    --main-color:black;
+    --accent-color: rgb(50,206,211);
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;       /* Не обовязкво але бажано */  
+     max-width: 250px;    /*для того шоб звужовалось при звужувані сторінки для картинок краще max-wigth 100% шоб під ширину контенера*/
+}
+header nav {
+    background-color: var(--accent-color);
+}
+header .banner h1,
+header .logo {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 56px;
+}
+
+header nav .menu{
+    display: flex;
+    flex-direction:column;
+}
+header nav .menu a {
+    color: var(--main-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 5px;   
+}
+header nav .menu a:hover {
+font-weight: bold;
+}
+.container {
+    max-width: 980px;   /* обовязково */
+    margin: auto;
+}
+
+@media (min-width:600px){
+
+    header nav .container {
+        display: flex;
+     }
+     
+     header nav .menu{
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-around;
+        flex: 1;
+     }
+
+
+}
+header .banner {
+    background-image: url(../img/baby-yoda.svg);
+    background-size: cover;
+    min-height: 400px;
+    background-position: center;
+    display: flex;
+    justify-content: center;   /*по центру розтянути*/
+    align-items: center;
+    flex-direction: column;   /*буде один над одним */
+}
+header .banner h1 {
+    color: var(--accent-color);
+}
+main .products > article {
+    border: 1px solid var(--main-color);
+    padding: 5px;
+    
+}
+main .products > article img {
+    display: block;
+    width: 100%;
+}
+main .products > article > .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+@media (min-width: 600px) {
+    main .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+    }
+}
+@media (min-width: 801px) {
+    main .products {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (min-width: 980px) {
+        main .products {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+
+
